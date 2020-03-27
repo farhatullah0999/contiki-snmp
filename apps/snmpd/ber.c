@@ -512,7 +512,7 @@ s8t ber_encode_integer(u8t* output, s16t* pos, u8t type, const s32t value)
     s8t j;
 
     /* get the length of the BER encoded integer value in bytes */
-    if (value < -16777216 || value > 16777215) {
+    if (value < -8388607 || value > 8388607) {
         length = 4;
     } else if (value < -32768 || value > 32767) {
         length = 3;
